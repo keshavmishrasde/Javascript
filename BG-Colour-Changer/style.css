@@ -1,0 +1,67 @@
+body {
+  background-color: #e0c9a6;
+}
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
+  gap: 20px;
+}
+#violet {
+  height: 100px;
+  width: 100px;
+  border: 5px solid black;
+  border-radius: 40%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  background-color: violet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+#blue {
+  height: 100px;
+  width: 100px;
+  border: 5px solid black;
+  border-radius: 40%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+#green {
+  height: 100px;
+  width: 100px;
+  border: 5px solid black;
+  border-radius: 40%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+#red {
+  height: 100px;
+  width: 100px;
+  border: 5px solid black;
+  border-radius: 40%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+#violet:hover,
+#blue:hover,
+#green:hover,
+#red:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border-radius: 50%;
+}
