@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Test</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="intro">
+      <h1>TYPING SPEED TEST</h1>
+      <p>Test Your Typing Speed and Accuracy With Random Sentences</p>
+    </div>
+    <div class="testArea">
+      <div class="info">
+        <h2>Type The Text Below</h2>
+        <p><span id="time">Time Remaining:</span></p>
+      </div>
+      <div id="sentence"></div>
+      <div id="userSentence">
+        <textarea name="userSentence" id="userInput"></textarea>
+      </div>
+      <div id="score">
+        <p><span id="wpm">WPM:</span></p>
+        <p><span id="accuracy">ACCURACY:</span></p>
+      </div>
+      <button id="resetbtn" type="reset">Restart</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
