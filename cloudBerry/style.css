@@ -1,0 +1,579 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --cream: #fffaf3;
+  --ink: #403650;
+  --muted: #8d829b;
+  --purple: #a98add;
+  --shadow: 0 16px 40px rgba(94, 75, 122, 0.09);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  padding: 30px 0 55px;
+  color: var(--ink);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background:
+    radial-gradient(ellipse at 5% 5%, #fff0d9 0%, transparent 30%),
+    radial-gradient(ellipse at 95% 15%, #e9dcff 0%, transparent 32%),
+    radial-gradient(ellipse at 50% 95%, #f9e3ed 0%, transparent 35%),
+    var(--cream);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Nunito", sans-serif;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+.nav,
+.hero,
+body > .search,
+.result {
+  width: min(1100px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+
+#nav-left,
+#nav-right {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+#nav-left img {
+  width: 53px;
+  height: 48px;
+  object-fit: contain;
+}
+
+#nav-left-text h1 {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.8px;
+}
+
+#nav-left-text p {
+  margin-top: 1px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+#nav-right-text {
+  padding: 11px 18px;
+  border: 1px solid #e7dcfa;
+  border-radius: 999px;
+  background: #f2ebff;
+  color: #8069a6;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#nav-right-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c8b2f4, #a98add);
+  color: white;
+  font-family: "Material Symbols Outlined";
+  font-size: 21px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+#nav-right-icon:hover {
+  transform: rotate(12deg) scale(1.08);
+}
+
+.hero {
+  display: flex;
+  min-height: 205px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 25px 12px 10px;
+}
+
+#hero-left h3 {
+  margin-bottom: 9px;
+  color: #b38c73;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+#hero-left h1 {
+  font-size: clamp(30px, 4vw, 45px);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+#hero-left p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#hero-right {
+  display: flex;
+  width: 220px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero-right img {
+  width: 180px;
+  height: 150px;
+  object-fit: contain;
+  animation: float 4s ease-in-out infinite;
+}
+
+body > .search {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+form.search {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 8px 9px 8px 20px;
+  border: 1px solid rgba(183, 157, 219, 0.28);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 10px 30px rgba(94, 75, 122, 0.08);
+  transition: 0.25s ease;
+}
+
+form.search:focus-within {
+  border-color: #b99ee9;
+  box-shadow: 0 0 0 4px rgba(185, 158, 233, 0.15);
+}
+
+.search-icon {
+  color: #a38dbd;
+  font-family: "Material Symbols Outlined";
+  font-size: 22px;
+}
+
+#search-box {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#search-box::placeholder {
+  color: #aaa0b2;
+}
+
+#search-btn {
+  height: 46px;
+  padding: 0 25px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #d4c1f7, #b99ce9);
+  color: #493b61;
+  font-family: "Nunito", sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(154, 126, 205, 0.17);
+  transition: 0.25s ease;
+}
+
+#search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 18px rgba(154, 126, 205, 0.25);
+}
+
+.result {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 19px;
+}
+
+#mainresult {
+  position: relative;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 340px;
+  overflow: hidden;
+  padding: 42px 55px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 34px;
+  background:
+    radial-gradient(
+      ellipse at 78% 45%,
+      rgba(255, 255, 255, 0.55),
+      transparent 43%
+    ),
+    linear-gradient(115deg, #e1effc 0%, #e7e7fa 55%, #eee2f7 100%);
+  box-shadow: 0 22px 50px rgba(103, 91, 139, 0.1);
+}
+
+#mainresult::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  filter: blur(35px);
+  pointer-events: none;
+}
+
+#mainresult-left {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  min-width: 0;
+}
+
+#location-info {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.location-icon {
+  color: #987fc0;
+  font-family: "Material Symbols Outlined";
+  font-size: 21px;
+}
+
+#location-label {
+  color: #887e9b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#city-name {
+  margin-top: 3px;
+  color: #51445f;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+#temperature {
+  margin-top: 23px;
+  color: #403650;
+  font-family: "Nunito", sans-serif;
+  font-size: clamp(76px, 10vw, 112px);
+  font-weight: 900;
+  letter-spacing: -7px;
+  line-height: 0.95;
+}
+
+#weather-description {
+  display: block;
+  margin-top: 12px;
+  color: #625472;
+  font-family: "Nunito", sans-serif;
+  font-size: 21px;
+  font-weight: 900;
+}
+
+#weather-extra {
+  margin-top: 12px;
+  color: #81758e;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.weather-dot {
+  margin: 0 7px;
+  color: #b69cda;
+}
+
+#mainresult-right {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44%;
+  flex-shrink: 0;
+}
+
+#mainresult-right img {
+  display: block;
+  width: 100%;
+  max-width: 390px;
+  height: 280px;
+  object-fit: contain;
+  animation: float 5s ease-in-out infinite;
+}
+
+.weather-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 165px;
+  overflow: hidden;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 27px;
+  box-shadow: 0 12px 30px rgba(91, 73, 102, 0.07);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+#humidity {
+  background: linear-gradient(135deg, #e0f1fc, #d6e9fc);
+}
+
+#windspeed {
+  background: linear-gradient(135deg, #eee7fc, #e2dafa);
+}
+
+#feelslike {
+  background: linear-gradient(135deg, #fff0df, #ffe3d2);
+}
+
+.weather-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(91, 73, 102, 0.12);
+}
+
+.card-icon {
+  display: block;
+  margin-bottom: 13px;
+  font-size: 28px;
+}
+
+.card-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #83768f;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.card-value {
+  display: block;
+  color: #493e59;
+  font-family: "Nunito", sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.card-unit {
+  color: #81758e;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@media (max-width: 800px) {
+  .result {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #feelslike {
+    grid-column: 1 / -1;
+  }
+
+  #mainresult {
+    padding: 35px;
+  }
+
+  #mainresult-right img {
+    height: 230px;
+  }
+}
+
+@media (max-width: 580px) {
+  body {
+    padding-top: 17px;
+  }
+
+  .nav,
+  .hero,
+  body > .search,
+  .result {
+    width: calc(100% - 26px);
+  }
+
+  .nav {
+    padding: 10px 13px;
+    border-radius: 19px;
+  }
+
+  #nav-left img {
+    width: 43px;
+    height: 40px;
+  }
+
+  #nav-left-text h1 {
+    font-size: 19px;
+  }
+
+  #nav-right-text,
+  #nav-left-text p,
+  #hero-right {
+    display: none;
+  }
+
+  .hero {
+    min-height: 150px;
+  }
+
+  #hero-left h1 {
+    font-size: 31px;
+  }
+
+  #hero-left p {
+    font-size: 12px;
+  }
+
+  form.search {
+    flex-wrap: wrap;
+    padding: 9px 11px 11px 15px;
+    border-radius: 19px;
+  }
+
+  #search-box {
+    font-size: 13px;
+  }
+
+  #search-btn {
+    width: 100%;
+  }
+
+  .result {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  #mainresult {
+    min-height: 250px;
+    padding: 24px 19px;
+    gap: 5px;
+    border-radius: 25px;
+  }
+
+  #mainresult-left {
+    flex: 1;
+  }
+
+  #location-info {
+    gap: 5px;
+  }
+
+  #city-name {
+    font-size: 15px;
+  }
+
+  #temperature {
+    margin-top: 22px;
+    font-size: 65px;
+    letter-spacing: -4px;
+  }
+
+  #weather-description {
+    font-size: 15px;
+  }
+
+  #weather-extra {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  #mainresult-right {
+    width: 40%;
+  }
+
+  #mainresult-right img {
+    height: 155px;
+  }
+
+  .weather-card {
+    min-height: 140px;
+    padding: 17px;
+    border-radius: 20px;
+  }
+
+  #feelslike {
+    grid-column: 1 / -1;
+  }
+
+  .card-value {
+    font-size: 27px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
